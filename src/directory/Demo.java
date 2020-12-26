@@ -6,6 +6,6 @@ import javax.swing.JPasswordField;
 
 public class Demo{
 	public static void main(String args[]){
-		login.run();
+		Login.run();
 	}
 }

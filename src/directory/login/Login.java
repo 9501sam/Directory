@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class login{
+public class Login{
 
 	public static void run(){
 
@@ -14,7 +14,8 @@ public class login{
 		try{
 			scan = new Scanner(new FileInputStream("res/idAndPassword.txt"));
 		}catch(FileNotFoundException e){
-			System.out.println("Error: res/idAndPassword Not Found.");
+			System.out.println("Error: file idAndPassword Not Found.");
+			System.exit(0);
 		}
 
 		boolean login = false;
@@ -32,7 +33,7 @@ public class login{
 
 			if(id.equals(ID) && password.equals(PASSWORD)){
 				login = true;
-				System.out.println("login successed");
+				System.out.println("login successed.");
 				System.out.println();
 			}else{
 				System.out.println("login faild.");

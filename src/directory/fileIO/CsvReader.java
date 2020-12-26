@@ -1,3 +1,5 @@
-public class CsvWriter extend{
+package directory.fileIO;
+
+public class CsvReader{
 
 }

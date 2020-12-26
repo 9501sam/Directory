@@ -1,12 +1,12 @@
-package directory.fileIO
+package directory.fileIO;
 
 public class Person{
 
 	private String name;
-	private int birthDay;
+	private String birthDay;
 	private String phoneNumber;
 	private String category;
-	private String E_mail;
+	private String EMail;
 
 	public Person(){
 		name = "no name";

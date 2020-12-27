@@ -1,4 +1,4 @@
-package directory.fileIO;
+package directory.data;
 
 public class Person{
 

@@ -1,11 +1,17 @@
 package directory;
 
-import directory.login.*;
 import java.util.Scanner;
-import javax.swing.JPasswordField;
+
+import directory.login.*;
+import directory.data.*;
 
 public class Demo{
 	public static void main(String args[]){
+
 		Login.run();
+
+		DataFrame df = new DataFrame();
+
+		System.out.println(df.getTable());
 	}
 }

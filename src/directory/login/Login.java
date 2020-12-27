@@ -19,8 +19,8 @@ public class Login{
 		}
 
 		boolean login = false;
-		String ID = scan.nextLine();
-		String PASSWORD = scan.nextLine();
+		String ID = scan.next();
+		String PASSWORD = scan.next();
 
 		while(!login){
 			String id;

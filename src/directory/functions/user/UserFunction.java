@@ -1,7 +1,7 @@
 package directory.functions.user;
 
-import directory.fileIO.*;
-import directory.data.*;
+import directory.fileIO.CsvReader;
+import directory.data.DataFrame;
 
 public class UserFunction{
 

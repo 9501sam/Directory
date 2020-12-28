@@ -34,7 +34,6 @@ public class Login{
 			if(id.equals(ID) && password.equals(PASSWORD)){
 				login = true;
 				System.out.println("login successed.");
-				System.out.println();
 			}else{
 				System.out.println("login faild.");
 				System.out.println();

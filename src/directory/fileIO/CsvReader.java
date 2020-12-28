@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 
 import java.util.ArrayList;
 
+import directory.data.Data;
+
 public class CsvReader{
 
 	public static String[] readHeader(){
@@ -21,7 +23,7 @@ public class CsvReader{
 		return header;
 	}
 
-	public static ArrayList<String[]> readFile(){
+	public static ArrayList<Data> readFile(){
 		Scanner inputStream = null;
 		try{
 			inputStream = new Scanner(new FileInputStream("res/data.csv"));
@@ -29,12 +31,14 @@ public class CsvReader{
 			System.out.println("Error in directory.fileIO.CsvReader:");
 			System.out.println("res/data.csv not found.");
 		}
-		ArrayList<String[]> data = new ArrayList<String[]>();
+		String header[] = inputStream.nextLine().split(",");
+		ArrayList<Data> allData = new ArrayList<Data>();
 		while(inputStream.hasNextLine()){
 			String line[] = inputStream.nextLine().split(",");
-			data.add(line);
+			Data aData = new Data(header, line);
+			allData.add(aData);
 		}
-		return data;
+		return allData;
 	}
 
 }

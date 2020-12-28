@@ -21,6 +21,7 @@ public class Demo{
 			if(cmd.equals("A")){
 				AdminFunction.run();
 			}else if(cmd.equals("U")){
+				UserFunction.run();
 			}
 
 			System.out.print("\n[A]dmin_function [U]ser_function [Q]uit: ");

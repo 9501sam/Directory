@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import directory.data.Data;
 
-public class CsvReader{
+public class Reader{
 
 	public static String[] readHeader(){
 		Scanner inputStream = null;
@@ -23,7 +23,7 @@ public class CsvReader{
 		return header;
 	}
 
-	public static ArrayList<Data> readFile(){
+	public static ArrayList<Data> readCsvFile(){
 		Scanner inputStream = null;
 		try{
 			inputStream = new Scanner(new FileInputStream("res/data.csv"));

@@ -23,7 +23,17 @@ public class DataFrame extends Data{
 	}
 
 	public void printAllData(){
-		UserFunction.printAllData(this);
+		for(int i = 0; i < header.length; i++){
+			System.out.print(getHeader()[i] + ",");
+		}
+		System.out.println();
+		for(int i = 0; i < allData.size(); i++){ //print a data
+			for(int j = 0; j < header.length; j++){
+				System.out.print(allData.get(i).getValueOf(header[j]));
+				System.out.print(",");
+			}
+			System.out.println();
+		}
 	}
 
 }

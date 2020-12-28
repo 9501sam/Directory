@@ -13,11 +13,11 @@ public class Data extends Person{
 
 	public Data(String[] header, String[] value){
 		for(int i = 0; i < header.length; i++){
-			setData(header[i], value[i]);
+			setValueOf(header[i], value[i]);
 		}
 	}
 
-	public void setData(String key, String value){
+	public void setValueOf(String key, String value){
 		if(key.equals("name")){
 			basicAttribute.setName(value);
 		}else if(key.equals("birthDay")){
@@ -33,7 +33,7 @@ public class Data extends Person{
 		}
 	}
 
-	public String getData(String key){
+	public String getValueOf(String key){
 		if(key.equals("name")){
 			return basicAttribute.getName();
 		}else if(key.equals("birthDay")){

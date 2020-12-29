@@ -10,7 +10,7 @@ import directory.data.Data;
 
 public class Reader{
 
-	//for DataFrame to read Header
+	///*****DataFrame to read Header*****///
 	public static String[] readHeader(){
 		Scanner inputStream = null;
 		try{
@@ -24,7 +24,7 @@ public class Reader{
 		return header;
 	}
 
-	//for DataFrame to read AllData
+	///*****DataFrame to read AllData*****///
 	public static ArrayList<Data> readCsvFile(){
 		Scanner inputStream = null;
 		try{
@@ -43,7 +43,7 @@ public class Reader{
 		return allData;
 	}
 
-	//for Login to read id and password
+	///*****Login to read id and password*****//
 	public static String[] readIDAndPassword(){
 		Scanner inputStream = null;
 		try{
@@ -57,7 +57,7 @@ public class Reader{
 		return IDAndPassword;
 	}
 	
-	//for Login to read authentication
+	///*****Login to read authentication*****///
 	public static int readOneNumber(){
 		Scanner inputStream = null;
 		try{

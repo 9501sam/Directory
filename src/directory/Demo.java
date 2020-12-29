@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import directory.login.Login;
 import directory.data.DataFrame;
-import directory.functions.user.UserFunction;
-import directory.functions.admin.AdminFunction;
+import directory.functions.UserFunction;
+import directory.functions.AdminFunction;
 
 public class Demo{
 	public static void main(String args[]){

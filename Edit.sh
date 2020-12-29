@@ -18,7 +18,7 @@ then
 	vim ~/Java_Project/Directory/src/directory/fileIO/*java -p
 elif [ "$dir" = "fu" ] 
 then
-	vim ~/Java_Project/Directory/src/directory/functions/*/*java -p
+	vim ~/Java_Project/Directory/src/directory/functions/*java -p
 elif [ "$dir" = "lo" ] 
 then
 	vim ~/Java_Project/Directory/src/directory/login/*.java -p

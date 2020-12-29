@@ -1,4 +1,4 @@
-package directory.functions.admin;
+package directory.functions;
 
 import java.util.Scanner;
 

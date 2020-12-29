@@ -1,7 +1,6 @@
 package directory.data;
 
 import directory.fileIO.Reader;
-import directory.functions.user.*;
 import java.util.ArrayList;
 
 public class DataFrame extends Data{

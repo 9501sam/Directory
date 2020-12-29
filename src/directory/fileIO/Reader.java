@@ -43,6 +43,20 @@ public class Reader{
 		return allData;
 	}
 
+	//for Login to read id and password
+	public static String[] readIDAndPassword(){
+		Scanner inputStream = null;
+		try{
+			inputStream = new Scanner(new FileInputStream(
+						"res/idAndPassword.txt"));
+		}catch(FileNotFoundException e){
+			System.out.println("Error in directory.fileIO.Reader:");
+			System.out.println("idAndPassword.txt not found.");
+		}
+		String[] IDAndPassword = inputStream.nextLine().split(" ");
+		return IDAndPassword;
+	}
+	
 	//for Login to read authentication
 	public static int readOneNumber(){
 		Scanner inputStream = null;

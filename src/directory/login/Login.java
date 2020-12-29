@@ -46,7 +46,6 @@ public class Login{
 				int num[] = new int[3];
 				for(int i = 0; i < 3; i++)
 					num[i] = rand.nextInt(100) + 1;
-				Arrays.sort(num);
 				System.out.print("Please sort [");
 				for(int i = 0; i < 3; i++){
 					System.out.print(num[i]);
@@ -54,6 +53,7 @@ public class Login{
 						System.out.print(" ");
 				}
 				System.out.println("] in non-decrease order for authentication.");
+				Arrays.sort(num);
 				System.out.print(":");
 				int input[] = new int[3];
 				for(int i = 0; i < 3; i++)

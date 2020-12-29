@@ -96,5 +96,6 @@ public class Login{
 		if(question != 0)
 			System.out.println("Authentication success.");
 		System.out.println("Login success.");
+		System.out.println("");
 	}
 }

@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 import directory.fileIO.Reader;
 import directory.data.DataFrame;
+import directory.functions.user.Show;
 
 public class UserFunction{
 
-	public static void run(){
-		//input cmd
+	public static String readCmd(){
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("__________User function__________");
 		System.out.println("[sh]ow data");
@@ -19,24 +19,33 @@ public class UserFunction{
 		System.out.print(":");
 		String cmd = keyboard.nextLine();
 		cmd = cmd.toLowerCase();
+		return cmd;
+	}
+
+	public static void run(){
+		//input cmd
+		String cmd = readCmd();
+
+		DataFrame df = new DataFrame();
 
 		while(!cmd.equals("q")){
 			if(cmd.equals("sh")){
+				Show.run(df);
 			}else if(cmd.equals("se")){
+				//Search.run(df);
 			}else if(cmd.equals("ed")){
+				//Edit.run(df);
 			}else if(cmd.equals("de")){
+				//Delete.run(df);
+			}else{
+				System.out.println("================================");
+				System.out.println("Threr is nothing to do.");
+				System.out.println("================================");
+				System.out.println("");
 			}
 
 			//input cmd
-			System.out.println("__________User function__________");
-			System.out.println("[sh]ow data");
-			System.out.println("[se]arch data");
-			System.out.println("[ed]it data");
-			System.out.println("[de]lete data");
-			System.out.println("[q]uit to menu");
-			System.out.print(":");
-			cmd = keyboard.nextLine();
-			cmd = cmd.toLowerCase();
+			cmd = readCmd();
 		}
 
 		System.out.println("================================");

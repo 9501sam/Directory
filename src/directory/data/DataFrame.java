@@ -5,14 +5,17 @@ import java.util.ArrayList;
 
 public class DataFrame extends Data{
 
+	///*****data member*****///
 	private String header[] = null;
 	private ArrayList<Data> allData = new ArrayList<Data>();
 
+	///*****constructor*****///
 	public DataFrame(){
 		header = Reader.readHeader();
 		allData = Reader.readCsvFile();
 	}
 
+	///*****get*****///
 	public String[] getHeader(){
 		return header;
 	}
@@ -20,19 +23,19 @@ public class DataFrame extends Data{
 		return allData;
 	}
 
+	///*****print*****///
+	public void printAllHeader(){
+		for(int i = 0; i < header.length; i++)
+			printHeaderOf(header[i]);
+		System.out.println("");
+	}
 	public void printAllData(){
-		for(int i = 0; i < header.length; i++){
-			System.out.print(getHeader()[i] + ",");
-		}
-		System.out.println();
-		for(int i = 0; i < allData.size(); i++){ //print a data
+		for(int i = 0; i < allData.size(); i++){
 			for(int j = 0; j < header.length; j++){
-				System.out.print(allData.get(i).getValueOf(header[j]));
-				System.out.print(",");
+				allData.get(i).printValueOf(header[j]);
 			}
-			System.out.println();
+			System.out.println("");
 		}
 	}
-
 }
 

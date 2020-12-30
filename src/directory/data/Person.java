@@ -6,28 +6,24 @@ public class Person{
 	private String name;
 	private String birthDay;
 	private String phoneNumber;
-	private String category;
 	private String EMail;
 	//size
 	private int MAX_NAME_SIZE = 9;
 	private int BIRTHDAY_SIZE = 4;
 	private int PHONE_NUMBER_SIZE = 11;
-	private int MAX_CATEGORY_SIZE = 7;
-	private int MAX_EMAIL_SIZE = 39;
+	private int MAX_EMAIL_SIZE = 24;
 
 	///*****constructor*****///
 	public Person(){
 		name = "no name";
 		birthDay = "0101";
 		phoneNumber = "0000-000000";
-		category = "A";
 		EMail = "hahaha123@myserver.com";
 	}
 	public Person(String n, String bir, String ph, String ca, String e){
 		setName(n);
 		setBirthDay(bir);
 		setPhoneNumber(ph);
-		setCategory(ca);
 		setEMail(e);
 	}
 
@@ -46,10 +42,10 @@ public class Person{
 		int month = Integer.valueOf(str.substring(0,2));
 		int day = Integer.valueOf(str.substring(2,4));
 		if(str.length() != BIRTHDAY_SIZE ||
-				month < 1 || 12 > month ||
-				day < 1 || 31 > day){
+				month < 1 || 12 < month ||
+				day < 1 || 31 < day){
 			System.out.printf(
-					"Error: incorrec day format.\n",MAX_NAME_SIZE);
+					"Error: incorrect birthDay format.\n");
 			System.out.println("setBirthDay failed.");
 			return false;
 		}
@@ -76,16 +72,6 @@ public class Person{
 			return false;
 		}
 		phoneNumber = str;
-		return true;
-	}
-	public boolean setCategory(String str){
-		if(str.length() > MAX_CATEGORY_SIZE){
-			System.out.printf(
-				"Error: length of category should be less than %d.\n",MAX_CATEGORY_SIZE);
-			System.out.println("setCategory failed.");
-			return false;
-		}
-		category = str;
 		return true;
 	}
 	public boolean setEMail(String str){
@@ -117,7 +103,6 @@ public class Person{
 	public String getName(){return name;}
 	public String getBirthDay(){return birthDay;}
 	public String getPhoneNumber(){return phoneNumber;}
-	public String getCategory(){return category;}
 	public String getEMail(){return EMail;}
 
 	///*****print*****///
@@ -127,15 +112,12 @@ public class Person{
 			"%-10.10s",getBirthDay());}
 	public void printPhoneNumber(){System.out.printf(
 			"%-12.12s",getPhoneNumber());}
-	public void printCategory(){System.out.printf(
-			"%-8.8s",getCategory());}
 	public void printEMail(){System.out.printf(
-			"%-40.40s",getEMail());}
+			"%-24.24s",getEMail());}
 	public void printPerson(){
 		printName();
 		printBirthDay();
 		printPhoneNumber();
-		printCategory();
 		printEMail();
 	}
 

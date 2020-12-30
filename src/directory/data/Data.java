@@ -4,52 +4,83 @@ import java.util.HashMap;
 
 public class Data extends Person{
 
-	private Person basicAttribute = new Person();
-	private HashMap<String, String> additionAttribute = 
+	///*****data member*****///
+	private Person person = new Person();
+	private HashMap<String, String> category = 
 		new HashMap<String, String>();
+	private int MAX_SIZE = 9;
 
+	///*****constructor*****///
 	public Data(){
 	}
-
 	public Data(String[] header, String[] value){
 		for(int i = 0; i < header.length; i++){
 			setValueOf(header[i], value[i]);
 		}
 	}
 
-	public void setValueOf(String key, String value){
+	///*****set*****///
+	public boolean setValueOf(String key, String value){
 		if(key.equals("name")){
-			basicAttribute.setName(value);
+			person.setName(value);
 		}else if(key.equals("birthDay")){
-			basicAttribute.setBirthDay(value);
+			person.setBirthDay(value);
 		}else if(key.equals("phoneNumber")){
-			basicAttribute.setPhoneNumber(value);
-		}else if(key.equals("category")){
-			basicAttribute.setCategory(value);
+			person.setPhoneNumber(value);
 		}else if(key.equals("EMail")){
-			basicAttribute.setEMail(value);
+			person.setEMail(value);
 		}else{
-			additionAttribute.put(key, value);
+			if(key.length() > MAX_SIZE || value.length() > MAX_SIZE){
+				System.out.println("Error: length of key or length of value too long.");
+				return false;
+			}
+			category.put(key, value);
+			return true;
 		}
+		return false;
 	}
 
+	///*****get*****///
 	public String getValueOf(String key){
 		if(key.equals("name")){
-			return basicAttribute.getName();
+			return person.getName();
 		}else if(key.equals("birthDay")){
-			return basicAttribute.getBirthDay();
+			return person.getBirthDay();
 		}else if(key.equals("phoneNumber")){
-			return basicAttribute.getPhoneNumber();
-		}else if(key.equals("category")){
-			return basicAttribute.getCategory();
+			return person.getPhoneNumber();
 		}else if(key.equals("EMail")){
-			return basicAttribute.getEMail();
+			return person.getEMail();
 		}else{
-			return additionAttribute.get(key);
+			return category.get(key);
 		}
 	}
 
-	public void printData(){
+	///*****print*****///
+	public void printHeaderOf(String key){
+		if(key.equals("name")){
+			System.out.printf("%-10.10s", key);
+		}else if(key.equals("birthDay")){
+			System.out.printf("%-10.10s", key);
+		}else if(key.equals("phoneNumber")){
+			System.out.printf("%-12.12s", key);
+		}else if(key.equals("EMail")){
+			System.out.printf("%-24.24s", key);
+		}else{
+			System.out.printf("%-10.10s", key);
+		}
+	}
+	public void printValueOf(String key){
+		if(key.equals("name")){
+			person.printName();
+		}else if(key.equals("birthDay")){
+			person.printBirthDay();
+		}else if(key.equals("phoneNumber")){
+			person.printPhoneNumber();
+		}else if(key.equals("EMail")){
+			person.printEMail();
+		}else{
+			System.out.printf("%-10.10s", getValueOf(key));
+		}
 	}
 
 }

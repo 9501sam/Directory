@@ -23,6 +23,9 @@ public class DataFrame extends Data{
 		return allData;
 	}
 
+	///*****sort*****///
+	public void 
+
 	///*****print*****///
 	public void printAllHeader(){
 		for(int i = 0; i < header.length; i++)

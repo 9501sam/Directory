@@ -3,7 +3,6 @@ package directory.functions;
 import java.util.Scanner;
 
 import directory.fileIO.Reader;
-import directory.data.DataFrame;
 import directory.functions.user.Show;
 
 public class UserFunction{
@@ -25,8 +24,6 @@ public class UserFunction{
 	public static void run(){
 		//input cmd
 		String cmd = readCmd();
-
-		DataFrame df = new DataFrame();
 
 		while(!cmd.equals("q")){
 			if(cmd.equals("sh")){

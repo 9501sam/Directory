@@ -1,5 +1,5 @@
-name,birthDay,phoneNumber,EMail,os
-hahaha,1213,0937-123456,9501sam@gmail.com,arch
-bababa,1224,0937-111111,9501sam@gmail.com,ubuntu
-lalala,0101,0937-222222,9501sam@gmail.com,debian
-jajaja,1111,0937-333333,9501sam@gmail.com,lfs
+name,birthDay,phoneNumber,EMail
+hahaha,1213,0937-123456,9501sam@gmail.com
+bababa,1224,0937-111111,9501sam@gmail.com
+lalala,0101,0937-222222,9501sam@gmail.com
+jajaja,1111,0937-333333,9501sam@gmail.com

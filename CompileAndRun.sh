@@ -13,7 +13,7 @@ rm bin/* -rf
 #javac -d bin src/directory/fileIO/*java
 #javac -d bin src/directory/functions/*/*java
 
-javac -d bin src/directory/*.java src/directory/login/*java src/directory/fileIO/*java src/directory/data/*java src/directory/functions/*java src/directory/functions/user/*java src/directory/data/sort/*java
+javac -d bin src/directory/*.java src/directory/login/*java src/directory/fileIO/*java src/directory/data/*java src/directory/functions/*java src/directory/functions/user/*java
 
 #java -classpath ./bin:/res directory.Demo
 java -classpath ./bin directory.Demo

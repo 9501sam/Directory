@@ -6,74 +6,72 @@ import java.util.ArrayList;
 import directory.fileIO.Reader;
 //import directory.data.sort.DataFrameSort;
 
-public class DataFrame extends Data {
+public class DataFrame extends Person {
 
 	///*****data member*****///
-	private String header[] = null;
-	private ArrayList<Data> allData = new ArrayList<Data>();
+	private String header[] = {"name", "birthDay", "phoneNumber", "Email"};
+	private ArrayList<Person> allPerson = new ArrayList<Person>();
 	private String sortAttri = "";
 	private boolean gt = true;
 
 	///*****constructor*****///
 	public DataFrame(){
-		header = Reader.readHeader();
-		allData = Reader.readCsvFile();
+		allPerson = Reader.readCsvFile();
 	}
 
 	///*****get*****///
 	public String[] getHeader(){
 		return header;
 	}
-	public ArrayList<Data> getAllData(){
-		return allData;
+	public ArrayList<Person> getAllPerson(){
+		return allPerson;
 	}
-
-	///*****sort*****///
-	//@Override
-	//public boolean compareTo(Data cmpData){
-	//	return true;
-	//}
-
-	//public void sort(int l, int r, String key, int increase){
-	//	if(l < r){
-	//		int m = (l + r) / 2;
-
-	//		sort(l, m, key, increase);
-	//		sort(m+1, r, key, increase);
-
-	//		merge(l, m, r, key, increase);
-	//	}
-	//} 
-
-	//public void sortBy(String key, boolean increase){
-	//	if(increase)
-	//		sort(0, allData.size()-1, key, -1);
-	//	else
-	//		sort(0, allData.size()-1, key, 1);
-	//}
 
 	///*****print*****///
 	//header
-	//public void printAHeader(String key){
-	//	printAHeader(key);
-	//}
+	public void printAHeader(String key){
+		if(key.equals("name")){
+			System.out.printf("%-10.10s", key);
+		}else if(key.equals("birthDay")){
+			System.out.printf("%-10.10s", key);
+		}else if(key.equals("phoneNumber")){
+			System.out.printf("%-12.12s", key);
+		}else if(key.equals("EMail")){
+			System.out.printf("%-24.24s", key);
+		}
+	}
 	public void printAllHeader(){
 		for(int i = 0; i < header.length; i++)
 			printAHeader(header[i]);
 		System.out.println("");
 	}
-	//data
-	public void printACell(String key, int i){
-		allData.get(i).printValueOf(key);
+	public void printAllHeaderInCol(){
+		System.out.println("[name]");
+		System.out.println("[birthDay]");
+		System.out.println("[phoneNumber]");
+		System.out.println("[EMail]");
+		System.out.print(":");
 	}
-	public void printAData(int n){ // nth row
-		for(int i = 0; i < header.length; i++)
-			printACell(header[i], n);
+	//Person
+	public void printACell(String key, int i){
+		allPerson.get(i).printValueOf(key);
+	}
+	public void printAPerson(int i){ // ith row
+		allPerson.get(i).printPerson();
 		System.out.println("");
 	}
-	public void printAllData(){
-		for(int i = 0; i < allData.size(); i++){
-			printAData(i);
+	public void printAllPerson(){
+		for(int i = 0; i < allPerson.size(); i++){
+			printAPerson(i);
+		}
+	}
+	//col
+	public void printCol(String key){
+		printAHeader(key);
+		System.out.println("");
+		for(int i = 0;  i < allPerson.size(); i++){
+			printACell(key, i);
+			System.out.println("");
 		}
 	}
 

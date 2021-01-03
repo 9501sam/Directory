@@ -20,7 +20,7 @@ public class Person{
 		phoneNumber = "0000-000000";
 		EMail = "hahaha123@myserver.com";
 	}
-	public Person(String n, String bir, String ph, String ca, String e){
+	public Person(String n, String bir, String ph, String e){
 		setName(n);
 		setBirthDay(bir);
 		setPhoneNumber(ph);
@@ -98,12 +98,36 @@ public class Person{
 		EMail = str;
 		return true;
 	}
+	public boolean setValueOf(String key, String value){
+		if(key.equals("name")){
+			setName(value);
+		}else if(key.equals("birthDay")){
+			setBirthDay(value);
+		}else if(key.equals("phoneNumber")){
+			setPhoneNumber(value);
+		}else if(key.equals("EMail")){
+			setEMail(value);
+		}
+		return false;
+	}
 
 	///*****get*****///
 	public String getName(){return name;}
 	public String getBirthDay(){return birthDay;}
 	public String getPhoneNumber(){return phoneNumber;}
 	public String getEMail(){return EMail;}
+	public String getValueOf(String key){
+		if(key.equals("name")){
+			return getName();
+		}else if(key.equals("birthDay")){
+			return getBirthDay();
+		}else if(key.equals("phoneNumber")){
+			return getPhoneNumber();
+		}else if(key.equals("EMail")){
+			return getEMail();
+		}
+		return "";
+	}
 
 	///*****print*****///
 	public void printName(){System.out.printf(
@@ -119,6 +143,17 @@ public class Person{
 		printBirthDay();
 		printPhoneNumber();
 		printEMail();
+	}
+	public void printValueOf(String key){
+		if(key.equals("name")){
+			printName();
+		}else if(key.equals("birthDay")){
+			printBirthDay();
+		}else if(key.equals("phoneNumber")){
+			printPhoneNumber();
+		}else if(key.equals("EMail")){
+			printEMail();
+		}
 	}
 
 }

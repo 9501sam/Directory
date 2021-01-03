@@ -20,6 +20,7 @@ public class Search{
 
 		for(int i = 0; i < df.getAllPerson().size(); i++){
 			if(df.getAllPerson().get(i).getValueOf(key).equals(str)){
+				System.out.print("[" + i + "]");
 				df.printAPerson(i);
 			}
 		}

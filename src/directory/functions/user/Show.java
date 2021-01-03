@@ -8,7 +8,8 @@ import directory.data.DataFrame;
 
 public class Show{
 
-	public static void run(DataFrame df){
+	public static void run(){
+		DataFrame df = new DataFrame();
 
 		Scanner keyboard = new Scanner(System.in);
 

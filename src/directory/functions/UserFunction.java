@@ -7,6 +7,7 @@ import directory.data.DataFrame;
 
 import directory.functions.user.Show;
 import directory.functions.user.Search;
+import directory.functions.user.Add;
 
 public class UserFunction{
 
@@ -26,18 +27,16 @@ public class UserFunction{
 
 	public static void run(){
 
-		DataFrame df = new DataFrame();
-
 		//input cmd
 		String cmd = readCmd();
 
 		while(!cmd.equals("q")){
 			if(cmd.equals("sh")){
-				Show.run(df);
+				Show.run();
 			}else if(cmd.equals("se")){
-				Search.run(df);
+				Search.run();
 			}else if(cmd.equals("ed")){
-				//Edit.run(df);
+				//Edit.run();
 			}else if(cmd.equals("de")){
 				//Delete.run(df);
 			}else{

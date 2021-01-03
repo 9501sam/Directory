@@ -3,8 +3,10 @@ package directory.functions;
 import java.util.Scanner;
 
 import directory.fileIO.Reader;
-import directory.functions.user.Show;
 import directory.data.DataFrame;
+
+import directory.functions.user.Show;
+import directory.functions.user.Search;
 
 public class UserFunction{
 
@@ -33,7 +35,7 @@ public class UserFunction{
 			if(cmd.equals("sh")){
 				Show.run(df);
 			}else if(cmd.equals("se")){
-				//Search.run(df);
+				Search.run(df);
 			}else if(cmd.equals("ed")){
 				//Edit.run(df);
 			}else if(cmd.equals("de")){

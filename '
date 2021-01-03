@@ -4,24 +4,17 @@ import java.util.Scanner;
 import directory.data.DataFrame;
 
 public class Search{
-	public static void run(DataFrame df){
+	public static void run(){
 		Scanner keyboard = new Scanner(System.in);
 
 		System.out.println("================================");
 		System.out.println("Search by:");
 		df.printAllHeaderInCol();
+		System.out.print(":");
+
 		String key = keyboard.nextLine();
 
-		System.out.print("Search: ");
-
-		String str = keyboard.nextLine();
-
-		for(int i = 0; i < df.getAllPerson().size(); i++){
-			if(df.getAllPerson().get(i).getValueOf(key).equals(str)){
-				df.printAPerson(i);
-			}
-		}
-
+		df.printCol(key);
 
 		System.out.println("================================");
 		System.out.println("");

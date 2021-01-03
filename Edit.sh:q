@@ -22,6 +22,9 @@ then
 elif [ "$dir" = "lo" ] 
 then
 	vim ~/Java_Project/Directory/src/directory/login/*.java -p
+elif [ "$dir" = "us" ] 
+then
+	vim ~/Java_Project/Directory/src/directory/functions/user/*.java -p
 else
 	vim ~/Java_Project/Directory/src/directory/*.java ~/Java_Project/Directory/src/directory/fileIO/*java ~/Java_Project/Directory/src/directory/functions/*/*java ~/Java_Project/Directory/src/directory/login/*.java -p
 fi

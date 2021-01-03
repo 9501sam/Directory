@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import directory.fileIO.Reader;
 import directory.functions.user.Show;
+import directory.data.DataFrame;
 
 public class UserFunction{
 
@@ -22,6 +23,9 @@ public class UserFunction{
 	}
 
 	public static void run(){
+
+		DataFrame df = new DataFrame();
+
 		//input cmd
 		String cmd = readCmd();
 

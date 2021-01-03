@@ -4,7 +4,26 @@ import java.util.Scanner;
 
 import directory.data.DataFrame;
 
+import directory.data.sort.DataFrameSort;
+
 public class Show{
+
+	//public static voie sort(){
+	//	Scanner keyboard = new Scanner(System.in);
+	//	System.out.println("Chose an attribite to sort:");
+	//	System.out.println("[n]one");
+	//	for(int i = 0;  i < df.getHeader().length; i++){
+	//		System.out.println("[" + (i+1) + "]");
+	//		df.printAHeader(df.getHeader()[i]);
+	//	}
+	//	String str[] = new String[2];
+	//	str[0] = keyboard.nextLine();
+	//	System.out.println("[in]crease");
+	//	System.out.println("[de]crease");
+	//	str[1] = keyboard.nextLine();
+	//	return str;
+	//}
+
 	public static void run(DataFrame df){
 		Scanner keyboard = new Scanner(System.in);
 
@@ -12,38 +31,17 @@ public class Show{
 		System.out.println("show [all] data.");
 		System.out.println("show [an] attribute.");
 		System.out.println("[q]uit.");
-		System.our.ptint(":");
+		System.out.print(":");
 
 		String cmd = keyboard.nextLine().toLowerCase();
 
 		if(cmd.equals("all")){
-			df.
+			df.printAllHeader();
+			df.printAllData();
+			//df = DataFrameSort.sort(df);
 		}else if(cmd.equals("an")){
-			printOne(df);
+			System.out.println("there is nothing to do");
 		}
-
-		//for(int i = 0; i < df.getHeader().length; i++){
-		//	System.out.println("[" + (i+1) + "] " + df.getHeader()[i] + ".");
-		//}
-		//int showAttri = keyboard.nextInt() - 1;
-
-		//System.out.println("sort by an attribute?");
-		//System.out.println("[0] none");
-		//for(int i = 0; i < df.getHeader().length; i++){
-		//	System.out.println("[" + (i+1) + "] " + df.getHeader()[i] + ".");
-		//}
-		//int sortAttri = keyboard.nextInt() - 1;
-
-		//if(sortAttri >= 0){
-		//	System.out.println("sort by " + df.getHeader()[sortAttri] + ", ");
-		//}
-		//if(showAttri >= 0){
-		//	System.out.println("show attribute \"" + df.getHeader()[showAttri]+ "\":");
-		//}else{
-		//	System.out.println("show all data:");
-		//	df.printAllHeader();
-		//	df.printAllData();
-		//}
 
 		System.out.println("================================");
 		System.out.println("");

@@ -2,6 +2,8 @@ package directory.data;
 
 import java.util.HashMap;
 
+import java.util.Comparator;
+
 public class Data extends Person{
 
 	///*****data member*****///
@@ -56,7 +58,7 @@ public class Data extends Person{
 	}
 
 	///*****print*****///
-	public void printHeaderOf(String key){
+	public void printAHeader(String key){
 		if(key.equals("name")){
 			System.out.printf("%-10.10s", key);
 		}else if(key.equals("birthDay")){
@@ -82,5 +84,14 @@ public class Data extends Person{
 			System.out.printf("%-10.10s", getValueOf(key));
 		}
 	}
+
+	//public static Comparator<Data> DataComparator = new Comparator<Data>(){
+	//	public int compare(Data a, Data b){
+	//		//String str1 = a.getValueOf();
+	//		//String str2 = b.getValueOf();
+	//		//
+	//		//return name1.compareTo(name2);
+	//	}
+	//};
 
 }

@@ -3,11 +3,10 @@ package directory.functions;
 import java.util.Scanner;
 
 import directory.fileIO.Reader;
-import directory.data.DataFrame;
 
 import directory.functions.user.Show;
 import directory.functions.user.Search;
-//import directory.functions.user.Add;
+import directory.functions.user.Edit;
 
 public class UserFunction{
 
@@ -36,12 +35,12 @@ public class UserFunction{
 			}else if(cmd.equals("se")){
 				Search.run();
 			}else if(cmd.equals("ed")){
-				//Edit.run();
+				Edit.run();
 			}else if(cmd.equals("de")){
 				//Delete.run(df);
 			}else{
 				System.out.println("================================");
-				System.out.println("Threr is nothing to do.");
+				System.out.println("There is nothing to do.");
 				System.out.println("================================");
 				System.out.println("");
 			}

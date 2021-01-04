@@ -1,33 +1,50 @@
 package directory.functions.user;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
-import directory.data.DataFrame;
-
-//import directory.data.sort.DataFrameSort;
+import directory.data.Person;
+import directory.fileIO.Reader;
+import directory.data.Sort;
 
 public class Show{
 
 	public static void run(){
-		DataFrame df = new DataFrame();
+
+		ArrayList<Person> allPeoele = Reader.readCsvFile();
 
 		Scanner keyboard = new Scanner(System.in);
 
 		System.out.println("================================");
+
 		System.out.println("show [all] data.");
 		System.out.println("show [a] column.");
 		System.out.print(":");
-
 		String cmd = keyboard.nextLine().toLowerCase();
 
 		if(cmd.equals("all")){
-			df.printAllHeader();
-			df.printAllPerson();
-			//df = DataFrameSort.sort(df);
+			//System.out.println("sort by [none/name/birthDay/phoneNumber/EMail]");
+			//String cmd2 = keyboard.nextLine().toLowerCase();
+			//if(!cmd2.equals("none")){
+			//	System.out.println("[in]crease or [de]crease");
+			//	String cmd3 = keyboard.nextLine().toLowerCase();
+			//	Sort.sortBy(allPeoele, cmd2, cmd3);
+			//}
+			
+			//print
+			System.out.println("name,birthDay,phoneNumber,Email");
+			for(int i = 0; i < allPeoele.size(); i++){
+				allPeoele.get(i).printPerson();
+				System.out.println("");
+			}
 		}else if(cmd.equals("a")){
-			df.printAllHeaderInCol();
-			String key = keyboard.nextLine();
-			df.printCol(key);
+			System.out.println("which column: [name/birthDay/phoneNumber/EMail]");
+			String key = keyboard.nextLine().toLowerCase();
+			System.out.println(key);
+			for(int i = 0; i < allPeoele.size(); i++){
+				allPeoele.get(i).printValueOf(key);
+				System.out.println("");
+			}
 		}
 
 		System.out.println("================================");

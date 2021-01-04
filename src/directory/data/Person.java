@@ -1,5 +1,9 @@
 package directory.data;
 
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
 public class Person{
 
 	///*****data member*****///
@@ -7,11 +11,6 @@ public class Person{
 	private String birthDay;
 	private String phoneNumber;
 	private String EMail;
-	//size
-	private int MAX_NAME_SIZE = 9;
-	private int BIRTHDAY_SIZE = 4;
-	private int PHONE_NUMBER_SIZE = 11;
-	private int MAX_EMAIL_SIZE = 24;
 
 	///*****constructor*****///
 	public Person(){
@@ -29,19 +28,13 @@ public class Person{
 
 	///*****set*****///
 	public boolean setName(String str){
-		if(str.length() > MAX_NAME_SIZE){
-			System.out.printf(
-					"Error: length of name should be less than %d.\n",MAX_NAME_SIZE);
-			System.out.println("setName failed.");
-			return false;
-		}
 		name = str;
 		return true;
 	}
 	public boolean setBirthDay(String str){
 		int month = Integer.valueOf(str.substring(0,2));
 		int day = Integer.valueOf(str.substring(2,4));
-		if(str.length() != BIRTHDAY_SIZE ||
+		if(str.length() != 4 ||
 				month < 1 || 12 < month ||
 				day < 1 || 31 < day){
 			System.out.printf(
@@ -54,7 +47,7 @@ public class Person{
 	}
 	public boolean setPhoneNumber(String str){ //XXXX-XXXXXX
 		boolean rightFormat = true;
-		if(str.length() != PHONE_NUMBER_SIZE)
+		if(str.length() != 11)
 			rightFormat = false;
 		if(str.charAt(4) != '-')
 			rightFormat = false;
@@ -75,12 +68,6 @@ public class Person{
 		return true;
 	}
 	public boolean setEMail(String str){
-		if(str.length() > MAX_EMAIL_SIZE){
-			System.out.println(
-					"Error: length of EMail should be less than %d.");
-			System.out.println("setEMail failed.");
-			return false;
-		}
 		int atIndex = 0; //"@"
 		int dotIndex = 0; // @xxxxx"."xxx
 		for(int i = 0; i < str.length(); i++)
@@ -99,13 +86,13 @@ public class Person{
 		return true;
 	}
 	public boolean setValueOf(String key, String value){
-		if(key.equals("name")){
+		if(key.equalsIgnoreCase("name")){
 			setName(value);
-		}else if(key.equals("birthDay")){
+		}else if(key.equalsIgnoreCase("birthDay")){
 			setBirthDay(value);
-		}else if(key.equals("phoneNumber")){
+		}else if(key.equalsIgnoreCase("phoneNumber")){
 			setPhoneNumber(value);
-		}else if(key.equals("EMail")){
+		}else if(key.equalsIgnoreCase("EMail")){
 			setEMail(value);
 		}
 		return false;
@@ -117,43 +104,42 @@ public class Person{
 	public String getPhoneNumber(){return phoneNumber;}
 	public String getEMail(){return EMail;}
 	public String getValueOf(String key){
-		if(key.equals("name")){
+		if(key.equalsIgnoreCase("name")){
 			return getName();
-		}else if(key.equals("birthDay")){
+		}else if(key.equalsIgnoreCase("birthDay")){
 			return getBirthDay();
-		}else if(key.equals("phoneNumber")){
+		}else if(key.equalsIgnoreCase("phoneNumber")){
 			return getPhoneNumber();
-		}else if(key.equals("EMail")){
+		}else if(key.equalsIgnoreCase("EMail")){
 			return getEMail();
 		}
 		return "";
 	}
 
 	///*****print*****///
-	public void printName(){System.out.printf(
-			"%-10.10s",getName());}
-	public void printBirthDay(){System.out.printf(
-			"%-10.10s",getBirthDay());}
-	public void printPhoneNumber(){System.out.printf(
-			"%-12.12s",getPhoneNumber());}
-	public void printEMail(){System.out.printf(
-			"%-24.24s",getEMail());}
+	public void printName(){System.out.print(getName());}
+	public void printBirthDay(){System.out.printf(getBirthDay());}
+	public void printPhoneNumber(){System.out.printf(getPhoneNumber());}
+	public void printEMail(){System.out.printf(getEMail());}
 	public void printPerson(){
 		printName();
+		System.out.print(",");
 		printBirthDay();
+		System.out.print(",");
 		printPhoneNumber();
+		System.out.print(",");
 		printEMail();
 	}
 	public void printValueOf(String key){
-		if(key.equals("name")){
+		if(key.equalsIgnoreCase("name")){
 			printName();
-		}else if(key.equals("birthDay")){
+		}else if(key.equalsIgnoreCase("birthDay")){
 			printBirthDay();
-		}else if(key.equals("phoneNumber")){
+		}else if(key.equalsIgnoreCase("phoneNumber")){
 			printPhoneNumber();
-		}else if(key.equals("EMail")){
+		}else if(key.equalsIgnoreCase("EMail")){
 			printEMail();
 		}
 	}
-
 }
+

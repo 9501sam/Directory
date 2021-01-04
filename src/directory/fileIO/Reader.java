@@ -23,8 +23,10 @@ public class Reader{
 		ArrayList<Person> allPerson = new ArrayList<Person>();
 		while(inputStream.hasNextLine()){
 			String line[] = inputStream.nextLine().split(",");
-			Person aPerson = new Person(line[0], line[1], line[2], line[3]);
-			allPerson.add(aPerson);
+			if(line.length == 4){
+				Person aPerson = new Person(line[0], line[1], line[2], line[3]);
+				allPerson.add(aPerson);
+			}
 		}
 		return allPerson;
 	}

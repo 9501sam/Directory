@@ -16,18 +16,16 @@ public class Edit{
 		System.out.println("chose an data to edit:");
 		//String numStr = keyboard.nextLine();
 		//int n = Integer.valueOf(numStr);
-		int n = keyboard.nextInt();
-		keyboard.nextLine();
 
-		System.out.println("enter new data(name,birthDay,phoneNumber,Email):");
-		String data[] = keyboard.nextLine().split(",");
-		Person temp = new Person();
-		if(temp.setName(data[0]) &&
-					temp.setBirthDay(data[1]) &&
-					temp.setPhoneNumber(data[2]) && 
-					temp.setEMail(data[3])){
-			allPeople.set(n, temp);
-					}
+		//System.out.println("enter new data(name,birthDay,phoneNumber,Email):");
+		//String data[] = keyboard.nextLine().split(",");
+		//Person temp = new Person();
+		//if(temp.setName(data[0]) &&
+		//			temp.setBirthDay(data[1]) &&
+		//			temp.setPhoneNumber(data[2]) && 
+		//			temp.setEMail(data[3])){
+		//	allPeople.set(n, temp);
+		//			}
 
 		Writer.saveCsvFile(allPeople);
 	}

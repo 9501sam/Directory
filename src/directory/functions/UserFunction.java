@@ -7,6 +7,7 @@ import directory.fileIO.Reader;
 import directory.functions.user.Show;
 import directory.functions.user.Search;
 import directory.functions.user.Edit;
+import directory.functions.user.Delete;
 
 public class UserFunction{
 
@@ -37,7 +38,7 @@ public class UserFunction{
 			}else if(cmd.equals("ed")){
 				Edit.run();
 			}else if(cmd.equals("de")){
-				//Delete.run(df);
+				Delete.run();
 			}else{
 				System.out.println("================================");
 				System.out.println("There is nothing to do.");

@@ -25,6 +25,7 @@ public class Writer{
 		outputStream.close();
 	}
 
+	///*****save to data.csv*****///
 	public static void saveCsvFile(ArrayList<Person> all){
 		PrintWriter outputStream = null;
 		try{

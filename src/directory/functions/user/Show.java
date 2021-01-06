@@ -18,7 +18,6 @@ public class Show{
 		System.out.println("================================");
 
 		System.out.println("show [all] data.");
-		System.out.println("show [a] column.");
 		System.out.print(":");
 		String cmd = keyboard.nextLine().toLowerCase();
 
@@ -32,17 +31,9 @@ public class Show{
 			//}
 			
 			//print
-			System.out.println("name,birthDay,phoneNumber,Email");
+			System.out.println("name,birthDay,phoneNumber,Email,relationship");
 			for(int i = 0; i < allPeoele.size(); i++){
 				allPeoele.get(i).printPerson();
-				System.out.println("");
-			}
-		}else if(cmd.equals("a")){
-			System.out.println("which column: [name/birthDay/phoneNumber/EMail]");
-			String key = keyboard.nextLine().toLowerCase();
-			System.out.println(key);
-			for(int i = 0; i < allPeoele.size(); i++){
-				allPeoele.get(i).printValueOf(key);
 				System.out.println("");
 			}
 		}

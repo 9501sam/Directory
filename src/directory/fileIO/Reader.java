@@ -23,8 +23,8 @@ public class Reader{
 		ArrayList<Person> allPerson = new ArrayList<Person>();
 		while(inputStream.hasNextLine()){
 			String line[] = inputStream.nextLine().split(",");
-			if(line.length == 4){
-				Person aPerson = new Person(line[0], line[1], line[2], line[3]);
+			if(line.length == 5){
+				Person aPerson = new Person(line[0], line[1], line[2], line[3], line[4]);
 				allPerson.add(aPerson);
 			}
 		}
@@ -57,6 +57,20 @@ public class Reader{
 		}
 		int num = inputStream.nextInt();
 		return num;
+	}
+
+	///*****read relationship*****///
+	public static String[] readRelationship(){
+		Scanner inputStream = null;
+		try{
+			inputStream = new Scanner(new FileInputStream(
+						"res/setting/relationship"));
+		}catch(FileNotFoundException e){
+			System.out.println("Error in directory.fileIO.Reader:");
+			System.out.println("res/setting/relationship not found.");
+		}
+		String rela[] = inputStream.nextLine().split(",");
+		return rela;
 	}
 
 }

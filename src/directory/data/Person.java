@@ -1,5 +1,7 @@
 package directory.data;
 
+import directory.fileIO.Reader;
+
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -11,6 +13,7 @@ public class Person{
 	private String birthDay;
 	private String phoneNumber;
 	private String EMail;
+	private String relationship;
 
 	///*****constructor*****///
 	public Person(){
@@ -18,12 +21,14 @@ public class Person{
 		birthDay = "0101";
 		phoneNumber = "0000-000000";
 		EMail = "hahaha123@myserver.com";
+		relationship = "friend";
 	}
-	public Person(String n, String bir, String ph, String e){
+	public Person(String n, String bir, String ph, String e, String re){
 		setName(n);
 		setBirthDay(bir);
 		setPhoneNumber(ph);
 		setEMail(e);
+		setRelationship(re);
 	}
 
 	///*****set*****///
@@ -85,6 +90,24 @@ public class Person{
 		EMail = str;
 		return true;
 	}
+	public boolean setRelationship(String str){
+		relationship = str;
+		return true;
+	}
+	public boolean setRelationship(){
+		System.out.println("choose an relationship: ");
+		String rela[] = Reader.readRelationship();
+		for(int i = 0; i < rela.length; i++)
+			System.out.println("[" + i + "]" + rela[i]);
+		Scanner keyboard = new Scanner(System.in);
+		String in = keyboard.nextLine();
+		int n = Integer.valueOf(in);
+		if(0 <= n && n < rela.length){
+			relationship = rela[n];
+			return true;
+		}
+		return false;
+	}
 	public boolean setValueOf(String key, String value){
 		if(key.equalsIgnoreCase("name")){
 			setName(value);
@@ -94,6 +117,8 @@ public class Person{
 			setPhoneNumber(value);
 		}else if(key.equalsIgnoreCase("EMail")){
 			setEMail(value);
+		}else if(key.equalsIgnoreCase("relationship")){
+			setRelationship(value);
 		}
 		return false;
 	}
@@ -103,6 +128,7 @@ public class Person{
 	public String getBirthDay(){return birthDay;}
 	public String getPhoneNumber(){return phoneNumber;}
 	public String getEMail(){return EMail;}
+	public String getRelationship(){return relationship;}
 	public String getValueOf(String key){
 		if(key.equalsIgnoreCase("name")){
 			return getName();
@@ -112,6 +138,8 @@ public class Person{
 			return getPhoneNumber();
 		}else if(key.equalsIgnoreCase("EMail")){
 			return getEMail();
+		}else if(key.equalsIgnoreCase("relationship")){
+			return getRelationship();
 		}
 		return "";
 	}
@@ -121,6 +149,7 @@ public class Person{
 	public void printBirthDay(){System.out.printf(getBirthDay());}
 	public void printPhoneNumber(){System.out.printf(getPhoneNumber());}
 	public void printEMail(){System.out.printf(getEMail());}
+	public void printRelationship(){System.out.printf(getRelationship());}
 	public void printPerson(){
 		printName();
 		System.out.print(",");
@@ -129,17 +158,19 @@ public class Person{
 		printPhoneNumber();
 		System.out.print(",");
 		printEMail();
+		System.out.print(",");
+		printRelationship();
 	}
-	public void printValueOf(String key){
-		if(key.equalsIgnoreCase("name")){
-			printName();
-		}else if(key.equalsIgnoreCase("birthDay")){
-			printBirthDay();
-		}else if(key.equalsIgnoreCase("phoneNumber")){
-			printPhoneNumber();
-		}else if(key.equalsIgnoreCase("EMail")){
-			printEMail();
-		}
-	}
+	//public void printValueOf(String key){
+	//	if(key.equalsIgnoreCase("name")){
+	//		printName();
+	//	}else if(key.equalsIgnoreCase("birthDay")){
+	//		printBirthDay();
+	//	}else if(key.equalsIgnoreCase("phoneNumber")){
+	//		printPhoneNumber();
+	//	}else if(key.equalsIgnoreCase("EMail")){
+	//		printEMail();
+	//	}
+	//}
 }
 

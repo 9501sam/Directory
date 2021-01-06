@@ -21,6 +21,7 @@ public class Login{
 		String PASSWORD = idAndPassword[0];
 		while(!login){
 			//input id and password
+			//System.out.print("\033[H\033[2J");
 			System.out.print("Please enter your id number: ");
 			String inputID = keyboard.nextLine();
 			System.out.print("Please enter your password: ");
@@ -95,7 +96,11 @@ public class Login{
 		}
 		if(question != 0)
 			System.out.println("Authentication success.");
+
+		System.out.print("\033[H\033[2J");
+		System.out.println("================================");
 		System.out.println("Login success.");
+		System.out.println("================================");
 		System.out.println("");
 	}
 }

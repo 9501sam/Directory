@@ -42,7 +42,8 @@ public class Writer{
 			outputStream.print(all.get(i).getName() + ",");
 			outputStream.print(all.get(i).getBirthDay() + ",");
 			outputStream.print(all.get(i).getPhoneNumber() + ",");
-			outputStream.print(all.get(i).getEMail());
+			outputStream.print(all.get(i).getEMail() + ",");
+			outputStream.print(all.get(i).getRelationship());
 			outputStream.println("");
 		}
 		outputStream.close();

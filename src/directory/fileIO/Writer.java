@@ -37,7 +37,7 @@ public class Writer{
 			System.out.println("res/data.csv not fount");
 			System.exit(0);
 		}
-		outputStream.println("name,birthDay,phoneNumber,EMail");
+		outputStream.println("name,birthDay,phoneNumber,EMail,relationship");
 		for(int i = 0; i < all.size(); i++){
 			outputStream.print(all.get(i).getName() + ",");
 			outputStream.print(all.get(i).getBirthDay() + ",");

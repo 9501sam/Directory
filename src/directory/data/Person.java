@@ -91,8 +91,14 @@ public class Person{
 		return true;
 	}
 	public boolean setRelationship(String str){
-		relationship = str;
-		return true;
+		String rela[] = Reader.readRelationship();
+		for(int i = 0; i < rela.length; i++){
+			if(str = rela[i]){
+				relationship = str;
+				return true;
+			}
+		}
+		return false;
 	}
 	public boolean setRelationship(){
 		System.out.println("choose an relationship: ");

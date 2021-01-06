@@ -1,7 +1,6 @@
-package directory.functions.user;
+package directory.functions.basic;
 
 import java.util.Scanner;
-import directory.functions.user.Search;
 import java.util.ArrayList;
 import directory.data.Person;
 import directory.fileIO.*;

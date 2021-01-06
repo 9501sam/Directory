@@ -1,4 +1,4 @@
-package directory.functions.user;
+package directory.functions.basic;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ public class Show{
 			System.out.println("name,birthDay,phoneNumber,Email,relationship");
 			for(int i = 0; i < allPeoele.size(); i++){
 				allPeoele.get(i).printPerson();
+				System.out.println("");
 			}
 			System.out.println("============================================");
 		}

@@ -1,11 +1,11 @@
-package directory.functions.user;
+package directory.functions.basic;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
 import directory.data.Person;
 import directory.fileIO.Reader;
-import directory.functions.user.*;
+import directory.functions.basic.*;
 
 public class Search{
 	public static void run(){

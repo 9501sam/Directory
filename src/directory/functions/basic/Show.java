@@ -28,7 +28,6 @@ public class Show{
 
 			System.out.print("\033[H\033[2J");
 			System.out.println("============================================");
-			System.out.println("name,birthDay,phoneNumber,Email,relationship");
 			for(int i = 0; i < allPeoele.size(); i++){
 				allPeoele.get(i).printPerson();
 				System.out.println("");
@@ -36,7 +35,32 @@ public class Show{
 			System.out.println("============================================");
 		}else if(cmd.equals("a")){
 
-			////Sort.sortBy();
+			allPeoele = Sort.sortPeople(allPeoele);
+
+			System.out.println("choose an relation to show");
+			String rela[] = Reader.readRelationship();
+			for(int i = 0; i < rela.length; i++){
+				System.out.println("[" + i + "]" + rela[i]);
+			}
+			System.out.print(":");
+			Integer n = Integer.valueOf(keyboard.nextLine());
+
+			if(0 <= n && n < rela.length){
+				System.out.print("\033[H\033[2J");
+				System.out.println("======================================");
+				for(int i = 0; i < allPeoele.size(); i++){
+					if(allPeoele.get(i).getRelationship().equals(rela[n])){
+						allPeoele.get(i).printPerson();
+						System.out.println();
+					}
+				}
+				System.out.println("======================================");
+			}else{
+				System.out.print("\033[H\033[2J");
+				System.out.println("=================");
+				System.out.println("error");
+				System.out.println("=================");
+			}
 
 		}
 	}

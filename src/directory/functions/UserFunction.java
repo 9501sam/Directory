@@ -59,7 +59,6 @@ public class UserFunction{
 		System.out.println("================================");
 		System.out.println("exit user function.");
 		System.out.println("================================");
-		System.out.println("");
 	}
 
 }

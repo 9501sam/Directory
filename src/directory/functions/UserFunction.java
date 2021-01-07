@@ -8,6 +8,7 @@ import directory.functions.basic.Show;
 import directory.functions.basic.Search;
 import directory.functions.basic.Edit;
 import directory.functions.basic.Delete;
+import directory.functions.basic.Add;
 
 public class UserFunction{
 
@@ -16,6 +17,7 @@ public class UserFunction{
 		System.out.println("__________User function__________");
 		System.out.println("[sh]ow data");
 		System.out.println("[se]arch data");
+		System.out.println("[ad]d data");
 		System.out.println("[q]uit to menu");
 		System.out.println("_________________________________");
 		System.out.print(":");
@@ -42,6 +44,12 @@ public class UserFunction{
 				System.out.println("chose search option");
 				System.out.println("==================");
 				Search.run();
+			}else if(cmd.equals("ad")){
+				System.out.print("\033[H\033[2J");
+				System.out.println("==================");
+				System.out.println("add new data");
+				System.out.println("==================");
+				Add.run();
 			}
 			//input cmd
 			cmd = readCmd();

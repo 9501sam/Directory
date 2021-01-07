@@ -93,7 +93,7 @@ public class Person{
 	public boolean setRelationship(String str){
 		String rela[] = Reader.readRelationship();
 		for(int i = 0; i < rela.length; i++){
-			if(str = rela[i]){
+			if(str.equals(rela[i])){
 				relationship = str;
 				return true;
 			}
@@ -155,7 +155,7 @@ public class Person{
 	public void printBirthDay(){System.out.printf(getBirthDay());}
 	public void printPhoneNumber(){System.out.printf(getPhoneNumber());}
 	public void printEMail(){System.out.printf(getEMail());}
-	public void printRelationship(){System.out.printf(getRelationship());}
+	public void printRelationship(){System.out.print(relationship);}
 	public void printPerson(){
 		printName();
 		System.out.print(",");
@@ -178,5 +178,49 @@ public class Person{
 	//		printEMail();
 	//	}
 	//}
+}
+
+//inccrease
+class nameComparator implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return a.getName().compareTo(b.getName());
+	}
+}
+class birthDayComparator implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return a.getBirthDay().compareTo(b.getBirthDay());
+	}
+}
+class phoneNumberComparator implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return a.getPhoneNumber().compareTo(b.getPhoneNumber());
+	}
+}
+class EMailComparator implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return a.getEMail().compareTo(b.getEMail());
+	}
+}
+
+//decrease
+class nameComparator2 implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return b.getName().compareTo(a.getName());
+	}
+}
+class birthDayComparator2 implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return b.getBirthDay().compareTo(a.getBirthDay());
+	}
+}
+class phoneNumberComparator2 implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return b.getPhoneNumber().compareTo(a.getPhoneNumber());
+	}
+}
+class EMailComparator2 implements Comparator<Person>{
+	public int compare(Person a, Person b){
+		return b.getEMail().compareTo(a.getEMail());
+	}
 }
 

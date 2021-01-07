@@ -25,13 +25,13 @@ public class Demo{
 		while(!cmd.equals("Q")){
 
 			if(cmd.equals("A")){
-				System.out.println("\033[H\033[2J");
+				System.out.print("\033[H\033[2J");
 				System.out.println("================");
 				System.out.println("entered as admin");
 				System.out.println("================");
 				AdminFunction.run();
 			}else if(cmd.equals("U")){
-				System.out.println("\033[H\033[2J");
+				System.out.print("\033[H\033[2J");
 				System.out.println("================");
 				System.out.println("entered as user");
 				System.out.println("================");
@@ -48,7 +48,7 @@ public class Demo{
 			cmd = cmd.toUpperCase();
 		}
 
-		System.out.println("\033[H\033[2J");
+		System.out.print("\033[H\033[2J");
 		System.out.println("==================");
 		System.out.println("exit");
 		System.out.println("==================");

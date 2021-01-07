@@ -17,12 +17,15 @@ public class Show{
 
 		System.out.println("__________show option__________");
 		System.out.println("show [all] data.");
+		System.out.println("choose [a] relationship to show");
 		System.out.println("_______________________________");
 		System.out.print(":");
 		String cmd = keyboard.nextLine().toLowerCase();
 
 		if(cmd.equals("all")){
 			//print
+			allPeoele = Sort.sortPeople(allPeoele);
+
 			System.out.print("\033[H\033[2J");
 			System.out.println("============================================");
 			System.out.println("name,birthDay,phoneNumber,Email,relationship");
@@ -31,6 +34,10 @@ public class Show{
 				System.out.println("");
 			}
 			System.out.println("============================================");
+		}else if(cmd.equals("a")){
+
+			////Sort.sortBy();
+
 		}
 	}
 }

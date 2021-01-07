@@ -1,9 +1,9 @@
-name,birthDay,phoneNumber,EMail
+name,birthDay,phoneNumber,EMail,relationship
 bababa,1224,0937-111111,9501sam@gmail.com,friend
-lalala,0101,0937-222222,9501sam@gmail.com,family
-jajaja,1111,0937-333333,9501sam@gmail.com,family
+lalala,0101,0937-222222,9501sam@gmail.com,null
+jajaja,1111,0937-333333,9501sam@gmail.com,null
 bababa,1224,0937-111111,9501sam@gmail.com,friend
-hahaha,1224,0937-111111,9501sam@gmail.com,family
+hahaha,1224,0937-111111,9501sam@gmail.com,null
 bababa,1224,0937-111111,9501sam@gmail.com,friend
 lalala,1224,0937-111111,9501sam@gmail.com,friend
 bababa,1224,0937-333333,asdfasdf@gmail.com,classmate
@@ -15,3 +15,5 @@ bababa,1224,0937-111111,9501sam@gmail.com,friend
 bababa,1224,0937-111111,9501sam@gmail.com,classmate
 lalala,1224,0937-111111,9501sam@gmail.com,classmate
 hahaha,1224,0937-222222,9501sam@gmail.com,friend
+hahaha,1224,0937-111111,9501sam@gmail.com,classmate
+asdfasdf,1111,4321-654321,asdf@adf.asdf,friend

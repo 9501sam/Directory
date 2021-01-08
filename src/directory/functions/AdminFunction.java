@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import directory.fileIO.Writer;
 import directory.functions.basic.*;
-import directory.functions.advanced.ChooseQuestion;
+import directory.functions.advanced.*;
 
 public class AdminFunction{
 	public static void run(){
@@ -14,6 +14,7 @@ public class AdminFunction{
 		System.out.println("[sh]ow data");
 		System.out.println("[se]arch data");
 		System.out.println("[lo]gin authentication setting");
+		System.out.println("[ad]d relationship");
 		System.out.println("[q]uit to menu");
 		System.out.println("__________________________________");
 		System.out.print(":");
@@ -36,6 +37,8 @@ public class AdminFunction{
 				Search.run();
 			}else if(cmd.equals("lo")){
 				ChooseQuestion.run();
+			}else if(cmd.equals("ad")){
+				AddRelationship.run();
 			}
 
 			//input cmd
@@ -43,6 +46,7 @@ public class AdminFunction{
 			System.out.println("[sh]ow data");
 			System.out.println("[se]arch data");
 			System.out.println("[lo]gin authentication setting");
+			System.out.println("[ad]d relationship");
 			System.out.println("[q]uit to menu");
 			System.out.println("__________________________________");
 			System.out.print(":");

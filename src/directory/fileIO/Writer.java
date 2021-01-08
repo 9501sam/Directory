@@ -1,10 +1,11 @@
 package directory.fileIO;
 
+import directory.data.Person;
+import directory.fileIO.Reader;
+
 import java.io.PrintWriter;
 import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
-
-import directory.data.Person;
 import java.util.ArrayList;
 
 public class Writer{
@@ -46,6 +47,28 @@ public class Writer{
 			outputStream.print(all.get(i).getRelationship());
 			outputStream.println("");
 		}
+		outputStream.close();
+	}
+
+	///*****add relationship*****///
+	public static void addRelationship(String str){
+		String rela[] = Reader.readRelationship();
+		PrintWriter outputStream = null;
+		try{
+			outputStream = 
+				new PrintWriter(
+						new FileOutputStream("res/setting/relationship"));
+		}catch (FileNotFoundException e){
+			System.out.print("Error in Writer: ");
+			System.out.println("file not fount");
+			System.exit(0);
+		}
+		for(int i = 0; i < rela.length; i++){
+			outputStream.print(rela[i]);
+			outputStream.print(",");
+		}
+		outputStream.print(str);
+
 		outputStream.close();
 	}
 }

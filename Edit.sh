@@ -4,7 +4,7 @@ clear
 tree src/directory/
 
 echo
-echo "(de)Demo (da)data  (fi)fileIO  (fu)functions  (lo)login [ba]sic:"
+echo "(de)Demo (da)data  (fi)fileIO  (fu)functions  (lo)login [ba]sic [ad]vanced:"
 read dir
 
 if [ "$dir" = "de" ] 
@@ -25,5 +25,8 @@ then
 elif [ "$dir" = "ba" ] 
 then
 	vim ~/Java_Project/Directory/src/directory/functions/basic/*.java -p
+elif [ "$dir" = "ad" ] 
+then
+	vim ~/Java_Project/Directory/src/directory/functions/advanced/*.java -p
 fi
 

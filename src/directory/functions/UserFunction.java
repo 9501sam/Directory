@@ -4,11 +4,7 @@ import java.util.Scanner;
 
 import directory.fileIO.Reader;
 
-import directory.functions.basic.Show;
-import directory.functions.basic.Search;
-import directory.functions.basic.Edit;
-import directory.functions.basic.Delete;
-import directory.functions.basic.Add;
+import directory.functions.basic.*;
 
 public class UserFunction{
 

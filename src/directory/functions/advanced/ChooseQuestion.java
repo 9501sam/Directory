@@ -19,19 +19,30 @@ public class ChooseQuestion{
 		input = input.toLowerCase();
 		if(input.equals("n")){
 			Writer.setAuthen(0);
+			System.out.print("\033[H\033[2J");
+			System.out.println("================================");
 			System.out.print("set to ");
 			System.out.println("none.");
+			System.out.println("================================");
 		}else if(input.equals("s")){
 			Writer.setAuthen(1);
+			System.out.print("\033[H\033[2J");
+			System.out.println("================================");
 			System.out.print("set to ");
 			System.out.println("sort three integer between 1-100.");
+			System.out.println("================================");
 		}else if(input.equals("c")){
 			Writer.setAuthen(2);
+			System.out.print("\033[H\033[2J");
+			System.out.println("================================");
 			System.out.print("set to ");
 			System.out.println("compute a simple arithmetic.");
+			System.out.println("================================");
 		}else{
+			System.out.print("\033[H\033[2J");
+			System.out.println("================================");
 			System.out.println("There is nothing to do.");
+			System.out.println("================================");
 		}
-		System.out.println("");
 	}
 }
